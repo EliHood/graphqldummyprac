@@ -1,31 +1,41 @@
 {
   "name": "eligraph2",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-scripts": "3.1.2"
-  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Eli Hood <eli.hood@aol.com>",
+  "license": "MIT",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "server": "nodemon --exec babel-node main.js",
+    "client": "cd ./client && npm start ",
+    "lint": "eslint **.js . --ignore-pattern '/client/'",
+    "lint:fix": "eslint **.js . --ignore-pattern '/client/' --fix",
+    "startdev": "concurrently --kill-others  \"npm run client\" \"npm run server\" "
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "apollo-boost": "^0.4.4",
+    "apollo-server-express": "^2.9.3",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "body-parser": "^1.19.0",
+    "concurrently": "^4.1.2",
+    "cookie-parser": "^1.4.4",
+    "cookie-session": "^1.3.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
+    "eslint": "^6.4.0",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "faker": "^4.1.0",
+    "graphql": "^14.5.7",
+    "graphql-tag": "^2.10.1",
+    "lodash.random": "^3.2.0",
+    "lodash.times": "^4.3.2",
+    "nodemon": "^1.19.2",
+    "pg": "^7.12.1",
+    "sequelize": "^5.19.0",
+    "sequelize-cli": "^5.5.1",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9"
   }
 }
